@@ -35,6 +35,14 @@ class Product:
         """приведение к строке (__magic__ method)"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
+    def __add__(self, prod) -> float:
+        """сложение (__magic__ method)"""
+
+        summa = self.price * self.quantity
+        if isinstance(prod, Product):
+            summa += prod.price * prod.quantity
+        return summa
+
 
 class Category:
     """класс для представления Категории"""
