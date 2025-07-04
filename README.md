@@ -1,5 +1,5 @@
 # Домашняя работа по ООП
-урок 14.1 
+урок 14.2 
 
 
 ## Описание:
@@ -30,11 +30,11 @@ class Category:
 
 ## Установка:
 
-1. Клонируйте репозиторий: https://github.com/BirkinSkyPro/course4.git
+2. Клонируйте репозиторий: git://github.com/BirkinSkyPro/course4.git
 
-2. Установите зависимости:
+1. Установите зависимости:
 
-	poetry install pytest
+	poetry install pytest mypy isort black flake8
 	
 
 
