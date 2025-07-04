@@ -28,14 +28,14 @@ class Category:
 
 
 
-## Установка:
-
-2. Клонируйте репозиторий: git://github.com/BirkinSkyPro/course4.git
+## Установка (macOS):
 
 1. Установите зависимости:
 
-	poetry install pytest mypy isort black flake8
+    sudo port install poetry
+	poetry add pytest black flake8 isort mypy
 	
+2. Клонируйте репозиторий: git://github.com/BirkinSkyPro/course4.git
 
 
 ## Тестирование:
