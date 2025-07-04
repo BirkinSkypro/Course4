@@ -9,8 +9,25 @@ class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
+
+    @classmethod
+    def new_product(cls, dict_product:dict):
+
+        return Product(**dict_product) # распаковка kwargs
+    # Геттер для __price
+    @property
+    def price(self):
+
+        return self.__price
+
+    @price.setter
+    def price(self, price_new):
+        if price_new<=0:
+            print (“Цена не должна быть нулевая или отрицательная”
+        else :
+            self.__price=price_new
 
 
 class Category:
@@ -40,12 +57,6 @@ class Category:
         self.__products.append(product)
 
         Category.product_count += product.quantity
-
-    def get_products(self): # геттер
-        return self.__products
-
-    #def set_email(self, email): # сеттер
-    #    self._email = email
 
     # Геттер для __products
     @property
