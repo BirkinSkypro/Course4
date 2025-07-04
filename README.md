@@ -33,6 +33,7 @@ class Category:
 1. Установите зависимости:
 
     sudo port install poetry
+2. 
 	poetry add pytest black flake8 isort mypy
 	
 2. Клонируйте репозиторий: git://github.com/BirkinSkyPro/course4.git
