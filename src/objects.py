@@ -21,15 +21,15 @@ class Category:
 
     name: str
     description: str
-    products: list[Product]
+    __products: list[Product]
 
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
 
-        for p in self.products:
+        for p in self.__products:
             Category.product_count += p.quantity
         # аттрибут класса :: счетчик Продуктов в категории
-        Category.category_count += len(self.products)
+        Category.category_count += len(self.__products)
         # аттрибут класса ::счетчик экземпляров в категории
