@@ -24,6 +24,7 @@ class Category:
     __products: list[Product]
 
     def __init__(self, name, description, products):
+
         self.name = name
         self.description = description
         self.__products = products
@@ -33,3 +34,21 @@ class Category:
         # аттрибут класса :: счетчик Продуктов в категории
         Category.category_count += len(self.__products)
         # аттрибут класса ::счетчик экземпляров в категории
+
+    def add_product(self, product: Product):
+
+        self.__products.append(product)
+
+        Category.product_count += product.quantity
+
+    def get_products(self): # геттер
+        return self.__products
+
+    #def set_email(self, email): # сеттер
+    #    self._email = email
+
+    # Геттер для __products
+    @property
+    def products(self):
+
+        return self.__products
