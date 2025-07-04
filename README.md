@@ -32,16 +32,22 @@ class Category:
 
 1. Установите зависимости:
 
+###  1.1  Установите macports*.dmg
+    обновите Macports:
+    sudo port update
+    sudo port upgrade outdated
     sudo port install poetry
 
-	poetry add pytest black flake8 isort mypy pytest-cov
+### 1.2 установите пакеты внутри poetry:
+
+    poetry add pytest black flake8 isort mypy pytest-cov
 	
 2. Клонируйте репозиторий: 
    пропишите URL в меню Git/Manage remote
 
     git://github.com/BirkinSkyPro/course4.git
 
-    git pull origin feature/homework14_2
+    выполните в терминале проекта : git pull origin feature/homework14_2
 
 ## Тестирование:
 ```
