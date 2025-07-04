@@ -32,19 +32,26 @@ class Category:
 
 1. Установите зависимости:
 
-###  1.1  Установите macports*.dmg
+### 1.1 Вместо XCode установите Xcode Command Line Tools
+    (он значительно меньше)
+    Для каждоой версии macOS существует свои совместимые версии CLT)
+    https://guide.macports.org/
+
+###  1.2 Вместо HomeBrew установите macports (последнеюю версию*.dmg)
+    
     обновите Macports:
-    sudo port update
+    sudo port selfupdate
     sudo port upgrade outdated
     sudo port install poetry
 
-### 1.2 установите пакеты внутри poetry:
+### 1.3 установите пакеты внутри poetry:
 
     poetry add pytest black flake8 isort mypy pytest-cov
 	
 2. Клонируйте репозиторий: 
-   пропишите URL в меню Git/Manage remote
+   пропишите в PyCharm в меню Git/Manage remote:
 
+    URL:
     git://github.com/BirkinSkyPro/course4.git
 
     выполните в терминале проекта : git pull origin feature/homework14_2
@@ -52,6 +59,8 @@ class Category:
 ## Тестирование:
 ```
 запустите pytest (в корне проекта)
+а также   pytest --cov=src --cov-report=html
+для проверки покрытия тестами
 ```
 
 ## Использование классов модуля objects:
