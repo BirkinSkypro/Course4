@@ -55,9 +55,10 @@ class Category:
 
     def add_product(self, product: Product):
 
-        self.__products.append(product)
+        if isinstance ( product, Product):
 
-        Category.product_count += product.quantity
+            self.__products.append(product)
+            Category.product_count += product.quantity
 
     # Геттер для __products
     @property
