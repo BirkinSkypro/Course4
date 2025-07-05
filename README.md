@@ -4,7 +4,7 @@
 
 ## Описание:
 
-  это веб-приложение на Python для управления задачами и проектами.
+  Это веб-приложение на Python для управления задачами и проектами.
   добавлены в  модуль src/objects классы :
   
 class Product:
@@ -12,7 +12,7 @@ class Product:
 
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
 
   
@@ -24,7 +24,7 @@ class Category:
 
     name: str
     description: str
-    products: list[Product]
+    __products: list[Product]
 
 
 
