@@ -59,8 +59,8 @@ def test_Category_ct(Category_Qq):
     assert Category_Qq.product_count == 13
 
     assert Category_Qq.products == [
-        "Samsung Galaxy S23 Ultra,180000.0 руб. Остаток: 5 шт.",
-        "Iphone 15,210000.0 руб. Остаток: 8 шт.",
+        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
+        "Iphone 15, 210000.0 руб. Остаток: 8 шт.",
     ]
 
     p = Product("Motorola", "Чудесный кнопочный", 1000.0, 1)
@@ -68,8 +68,8 @@ def test_Category_ct(Category_Qq):
     Category_Qq.add_product(p)
 
     assert Category_Qq.products == [
-        "Samsung Galaxy S23 Ultra,180000.0 руб. Остаток: 5 шт.",
-        "Iphone 15,210000.0 руб. Остаток: 8 шт.",
-        "Motorola,1000.0 руб. Остаток: 1 шт.",
+        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
+        "Iphone 15, 210000.0 руб. Остаток: 8 шт.",
+        "Motorola, 1000.0 руб. Остаток: 1 шт.",
     ]
-    assert Category_Qq.products[2] == "Motorola,1000.0 руб. Остаток: 1 шт."
+    assert Category_Qq.products[2] == "Motorola, 1000.0 руб. Остаток: 1 шт."

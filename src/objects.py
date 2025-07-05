@@ -30,6 +30,9 @@ class Product:
         else:
             self.__price = price_new
 
+    def __str__(self):
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
+
 
 class Category:
     """класс для представления Категории"""
@@ -55,7 +58,7 @@ class Category:
 
     def add_product(self, product: Product):
 
-        if isinstance ( product, Product):
+        if isinstance(product, Product):
 
             self.__products.append(product)
             Category.product_count += product.quantity
@@ -70,10 +73,20 @@ class Category:
 
             out = ""
 
-            out += (
-                f"{product.name},{product.price} руб. Остаток: {product.quantity} шт."
-            )
-            # print(f"product {out}")
+            out += str(product)
+
             ret.append(out)
-            # print (ret)
+
+        return ret
+
+    def __str__(self):
+
+        count=0
+        out="Название категории, количество продуктов: 200 шт."
+        for product in self.__products:
+
+            count += product.quantity
+
+            ret.append(out)
+
         return ret
