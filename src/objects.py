@@ -3,7 +3,7 @@ class Product:
 
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
@@ -13,9 +13,10 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, dict_product:dict):
+    def new_product(cls, dict_product: dict):
 
-        return Product(**dict_product) # распаковка kwargs
+        return Product(**dict_product)  # распаковка kwargs
+
     # Геттер для __price
     @property
     def price(self):
@@ -24,10 +25,10 @@ class Product:
 
     @price.setter
     def price(self, price_new):
-        if price_new<=0:
-            print (“Цена не должна быть нулевая или отрицательная”
-        else :
-            self.__price=price_new
+        if price_new <= 0:
+            print("Цена не должна быть нулевая или отрицательная")
+        else:
+            self.__price = price_new
 
 
 class Category:
@@ -62,4 +63,16 @@ class Category:
     @property
     def products(self):
 
-        return self.__products
+        ret = []
+        # print(f"getter for {len(self.__products)}")
+        for product in self.__products:
+
+            out = ""
+
+            out += (
+                f"{product.name},{product.price} руб. Остаток: {product.quantity} шт."
+            )
+            # print(f"product {out}")
+            ret.append(out)
+            # print (ret)
+        return ret
