@@ -32,8 +32,6 @@ def test_Product_price_setter(capsys, Product_Qq):
 
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
 
-    # new_product() НЕ проверяем
-
 
 @pytest.fixture
 def Category_Qq():

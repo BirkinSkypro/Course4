@@ -14,23 +14,25 @@ class Product:
 
     @classmethod
     def new_product(cls, dict_product: dict):
-
+        """создание экземпляра по словарю"""
         return Product(**dict_product)  # распаковка kwargs
 
     # Геттер для __price
     @property
     def price(self):
-
+        """чтение private аттрибута"""
         return self.__price
 
     @price.setter
     def price(self, price_new):
+        """запись в private аттрибут"""
         if price_new <= 0:
             print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = price_new
 
     def __str__(self):
+        """приведение к строке (__magic__ method)"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
 
@@ -57,7 +59,7 @@ class Category:
         # аттрибут класса ::счетчик экземпляров в категории
 
     def add_product(self, product: Product):
-
+        """добавление продукта в категорию"""
         if isinstance(product, Product):
 
             self.__products.append(product)
@@ -66,27 +68,17 @@ class Category:
     # Геттер для __products
     @property
     def products(self):
-
+        """чтение private аттрибута __products"""
         ret = []
-        # print(f"getter for {len(self.__products)}")
         for product in self.__products:
 
-            out = ""
-
-            out += str(product)
-
-            ret.append(out)
+            ret.append(str(product))
 
         return ret
 
     def __str__(self):
+        """приведение к строке (__magic__ method)"""
 
-        count=0
-        out="Название категории, количество продуктов: 200 шт."
-        for product in self.__products:
+        out = f"{self.name}, количество продуктов: {Category.product_count} шт."
 
-            count += product.quantity
-
-            ret.append(out)
-
-        return ret
+        return out
