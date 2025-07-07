@@ -4,7 +4,7 @@
 
 ## Описание:
 
-  это веб-приложение на Python для управления задачами и проектами.
+  Это веб-приложение на Python для управления задачами и проектами.
   добавлены в  модуль src/objects классы :
   
 class Product:
@@ -12,7 +12,7 @@ class Product:
 
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
 
   
@@ -24,7 +24,7 @@ class Category:
 
     name: str
     description: str
-    products: list[Product]
+    __products: list[Product]
 
 
 
@@ -32,16 +32,35 @@ class Category:
 
 1. Установите зависимости:
 
-    sudo port install poetry
-2. 
-	poetry add pytest black flake8 isort mypy
-	
-2. Клонируйте репозиторий: git://github.com/BirkinSkyPro/course4.git
+### 1.1 Вместо XCode установите Xcode Command Line Tools
+    (он значительно меньше)
+    Для каждоой версии macOS существует свои совместимые версии CLT)
+    https://guide.macports.org/
 
+###  1.2 Вместо HomeBrew установите macports (последнеюю версию*.dmg)
+    
+    обновите Macports:
+    sudo port selfupdate
+    sudo port upgrade outdated
+    sudo port install poetry
+
+### 1.3 установите пакеты внутри poetry:
+
+    poetry add pytest black flake8 isort mypy pytest-cov
+	
+2. Клонируйте репозиторий: 
+   пропишите в PyCharm в меню Git/Manage remote:
+
+    URL:
+    git://github.com/BirkinSkyPro/course4.git
+
+    выполните в терминале проекта : git pull origin feature/homework14_2
 
 ## Тестирование:
 ```
 запустите pytest (в корне проекта)
+а также   pytest --cov=src --cov-report=html
+для проверки покрытия тестами
 ```
 
 ## Использование классов модуля objects:
