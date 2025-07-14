@@ -8,14 +8,14 @@ def Product_Qq():
     return Product("Motorola", "Чудесный кнопочный", 1000.0, 1)
 
 
-def test_Product(Product_Qq):
+def test_product(Product_Qq):
 
     assert Product_Qq.name == "Motorola"
     assert Product_Qq.description == "Чудесный кнопочный"
     assert Product_Qq.price == 1000
 
 
-def test_Product_price_setter(capsys, Product_Qq):
+def test_product_price_setter(capsys, Product_Qq):
 
     assert Product_Qq.price == 1000
 
@@ -60,7 +60,7 @@ def Category_Qq():
     return category1
 
 
-def test_Category_ct(Category_Qq):
+def test_category_ct(Category_Qq):
     assert Category_Qq.name == "Смартфоны"
     assert Category_Qq.description == "Смартфоны, как средство для удобства жизни"
     assert Category_Qq.category_count == 2
