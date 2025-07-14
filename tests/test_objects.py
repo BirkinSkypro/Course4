@@ -33,7 +33,7 @@ def test_Product_price_setter(capsys, Product_Qq):
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
 
 
-def test_Product_add(Product_Qq):
+def test_product_add(Product_Qq):
 
     product1 = Product(
         "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
